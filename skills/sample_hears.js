@@ -43,6 +43,38 @@ module.exports = function(controller) {
 
     });
 
+
+    //fonction for the code pasted//
+    /**
+            _     _                 _      
+          | |   | |               | |     
+  __ _  __| | __| |   ___ ___   __| | ___ 
+ / _` |/ _` |/ _` |  / __/ _ \ / _` |/ _ \
+| (_| | (_| | (_| | | (_| (_) | (_| |  __/
+ \__,_|\__,_|\__,_|  \___\___/ \__,_|\___|
+                                          
+     */
+    controller.hears(['^code (.*)', '^code'],'direct_message,direct_mention',function(bot, message){
+        //create convo
+            bot.createConversation(message, function(err, convo){
+                if (!err) {
+                    //setting variable and other stuff...
+                    convo.setVar('code', code(process.code()));
+
+                    convo.say('you pasted {{vars.code}}');
+                    convo.activate();
+                }
+            })
+    
+
+})
+
+
+
+
+
+
+
     controller.hears(['^say (.*)','^say'], 'direct_message,direct_mention', function(bot, message) {
         if (message.match[1]) {
 

@@ -1,21 +1,11 @@
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-           ______     ______     ______   __  __     __     ______
-          /\  == \   /\  __ \   /\__  _\ /\ \/ /    /\ \   /\__  _\
-          \ \  __<   \ \ \/\ \  \/_/\ \/ \ \  _"-.  \ \ \  \/_/\ \/
-           \ \_____\  \ \_____\    \ \_\  \ \_\ \_\  \ \_\    \ \_\
-            \/_____/   \/_____/     \/_/   \/_/\/_/   \/_/     \/_/
-
-
-This is a sample Cisco Spark bot built with Botkit.
-
-# RUN THE BOT:
-  Follow the instructions here to set up your Cisco Spark bot:
-    -> https://developer.ciscospark.com/bots.html
-  Run your bot from the command line:
-    access_token=<MY BOT ACCESS TOKEN> public_address=<MY PUBLIC HTTPS URL> node bot.js
-
-
-
+______           _              ______  _____ _____ 
+| ___ \         (_)             | ___ \|  _  |_   _|
+| |_/ /_____   ___  _____      _| |_/ /| | | | | |  
+|    // _ \ \ / / |/ _ \ \ /\ / / ___ \| | | | | |  
+| |\ \  __/\ V /| |  __/\ V  V /| |_/ /\ \_/ / | |  
+\_| \_\___| \_/ |_|\___| \_/\_/ \____/  \___/  \_/  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 var env = require('node-env-file');
 env(__dirname + '/.env');
@@ -38,9 +28,7 @@ var debug = require('debug')('botkit:main');
 
 // Create the Botkit controller, which controls all instances of the bot.
 var controller = Botkit.sparkbot({
-    // debug: true,
-    // limit_to_domain: ['mycompany.com'],
-    // limit_to_org: 'my_cisco_org_id',
+    
     public_address: process.env.public_address,
     ciscospark_access_token: process.env.access_token,
     studio_token: process.env.studio_token, // get one from studio.botkit.ai to enable content management, stats, message console and more
