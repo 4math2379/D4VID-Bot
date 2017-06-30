@@ -23,8 +23,7 @@ This is an awesome plaforme for Coding and deploying easyly our Bot
 [Glitch](https://glitch.com/about/)
 
 
-
-<a href="http://imgur.com/yIhAd8e"><img src="http://i.imgur.com/yIhAd8e.png" title="source: imgur.com" /></a>
+<img src = "http://i.imgur.com/yIhAd8e.png"></img>
 
 # About me
 
