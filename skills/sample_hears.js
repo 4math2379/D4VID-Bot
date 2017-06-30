@@ -82,4 +82,53 @@ module.exports = function(controller) {
         return uptime;
     }
 
+        //our lib RD = reading 
+    function RDVar(code) {
+        //programming array
+        var jsPastedCode = ['let','var','function','if','else'];
+        var pyPastedCode = ['elif', 'import', 'module','def'];
+        var cssPastedcode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];
+        var htmlPastedCode = ['<h1>','<h2>','<p>','<html>','<div>','<a>','<section>'];
+
+        if (code = jsPastedCode) {
+            code = "this is JavaScript";
+            jsPastedCode = "Your code looks fine";
+        }
+        if (code = pyPastedCode) {
+            code = 'this is Python';
+            pyPastedCode = 'this is a challenged programming langage !';
+        }
+
+        if (code = cssPastedcode) {
+            code = 'this is Styling , CSS';
+            cssPastedcode = " Mastering styling give you nice design power";
+
+        }
+
+        if (code = htmlPastedCode) {
+            code = 'this is HTML code , the code to make website';
+            htmlPastedCode = 'your code looks good !';
+
+        }
+
+         code = parseInt(code)
+         return code;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 };
