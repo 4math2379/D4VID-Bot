@@ -24,7 +24,7 @@ This is an awesome plaforme for Coding and deploying easyly our Bot
 
 
 
-<img src = "<a href="http://imgur.com/yIhAd8e"><img src="http://i.imgur.com/yIhAd8e.png" title="source: imgur.com" /></a>"></img>
+<a href="http://imgur.com/yIhAd8e"><img src="http://i.imgur.com/yIhAd8e.png" title="source: imgur.com" /></a>
 
 # About me
 
