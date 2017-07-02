@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for skills/sample_hears.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">skills/</a> sample_hears.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.9% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.9% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+&nbsp;
+WHAT IS THIS?
+&nbsp;
+This module demonstrates simple uses of Botkit's `hears` handler functions.
+&nbsp;
+In these examples, Botkit is configured to listen for certain phrases, and then
+respond immediately with a single line response.
+&nbsp;
+*/
+&nbsp;
+var wordfilter = require('wordfilter');
+&nbsp;
+module.exports = <span class="fstat-no" title="function not covered" >function(controller) {</span>
+&nbsp;
+    /* Collect some very simple runtime stats for use in the uptime/debug command */
+<span class="cstat-no" title="statement not covered" >    var stats = {</span>
+        triggers: 0,
+        convos: 0,
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    controller.on('heard_trigger', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        stats.triggers++;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    controller.on('conversationStarted', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        stats.convos++;</span>
+    });
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    controller.hears(['^uptime','^debug'], 'direct_message,direct_mention', <span class="fstat-no" title="function not covered" >function(bot, message) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bot.createConversation(message, <span class="fstat-no" title="function not covered" >function(err, convo) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (!err) {</span>
+<span class="cstat-no" title="statement not covered" >                convo.setVar('uptime', formatUptime(process.uptime()));</span>
+<span class="cstat-no" title="statement not covered" >                convo.setVar('convos', stats.convos);</span>
+<span class="cstat-no" title="statement not covered" >                convo.setVar('triggers', stats.triggers);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                convo.say('My main process has been online for {{vars.uptime}}. Since booting, I have heard {{vars.triggers}} triggers, and conducted {{vars.convos}} conversations.');</span>
+<span class="cstat-no" title="statement not covered" >                convo.activate();</span>
+            }
+        });
+&nbsp;
+    });
+&nbsp;
+&nbsp;
+    //fonction for the code pasted//
+    /**
+            _     _                 _      
+          | |   | |               | |     
+  __ _  __| | __| |   ___ ___   __| | ___ 
+ / _` |/ _` |/ _` |  / __/ _ \ / _` |/ _ \
+| (_| | (_| | (_| | | (_| (_) | (_| |  __/
+ \__,_|\__,_|\__,_|  \___\___/ \__,_|\___|
+                                          
+     */
+<span class="cstat-no" title="statement not covered" >    controller.hears(['^code (.*)', '^code'],'direct_message,direct_mention',<span class="fstat-no" title="function not covered" >function(bot, message){</span></span>
+        //create convo
+<span class="cstat-no" title="statement not covered" >            bot.createConversation(message, <span class="fstat-no" title="function not covered" >function(err, convo){</span></span>
+<span class="cstat-no" title="statement not covered" >                if (!err) {</span>
+                    //setting variable and other stuff...
+<span class="cstat-no" title="statement not covered" >                    convo.setVar('code', code(process.code()));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    convo.say('you pasted {{vars.code}}');</span>
+<span class="cstat-no" title="statement not covered" >                    convo.activate();</span>
+                }
+            })
+    
+&nbsp;
+})
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    controller.hears(['^say (.*)','^say'], 'direct_message,direct_mention', <span class="fstat-no" title="function not covered" >function(bot, message) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (message.match[1]) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!wordfilter.blacklisted(message.match[1])) {</span>
+<span class="cstat-no" title="statement not covered" >                bot.reply(message, message.match[1]);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                bot.reply(message, '_sigh_');</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            bot.reply(message, 'I will repeat whatever you say.')</span>
+        }
+    });
+&nbsp;
+&nbsp;
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Utility function to format uptime */
+<span class="fstat-no" title="function not covered" >    function formatUptime(uptime) {</span>
+<span class="cstat-no" title="statement not covered" >        var unit = 'second';</span>
+<span class="cstat-no" title="statement not covered" >        if (uptime &gt; 60) {</span>
+<span class="cstat-no" title="statement not covered" >            uptime = uptime / 60;</span>
+<span class="cstat-no" title="statement not covered" >            unit = 'minute';</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (uptime &gt; 60) {</span>
+<span class="cstat-no" title="statement not covered" >            uptime = uptime / 60;</span>
+<span class="cstat-no" title="statement not covered" >            unit = 'hour';</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (uptime != 1) {</span>
+<span class="cstat-no" title="statement not covered" >            unit = unit + 's';</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uptime = parseInt(uptime) + ' ' + unit;</span>
+<span class="cstat-no" title="statement not covered" >        return uptime;</span>
+    }
+&nbsp;
+        //our lib RD = reading 
+<span class="fstat-no" title="function not covered" >    function RDVar(code) {</span>
+        //programming array
+<span class="cstat-no" title="statement not covered" >        var jsPastedCode = ['let','var','function','if','else'];</span>
+<span class="cstat-no" title="statement not covered" >        var pyPastedCode = ['elif', 'import', 'module','def'];</span>
+<span class="cstat-no" title="statement not covered" >        var cssPastedcode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];</span>
+<span class="cstat-no" title="statement not covered" >        var htmlPastedCode = ['&lt;h1&gt;','&lt;h2&gt;','&lt;p&gt;','&lt;html&gt;','&lt;div&gt;','&lt;a&gt;','&lt;section&gt;'];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (code = jsPastedCode) {</span>
+<span class="cstat-no" title="statement not covered" >            code = "this is JavaScript";</span>
+<span class="cstat-no" title="statement not covered" >            jsPastedCode = "Your code looks fine";</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (code = pyPastedCode) {</span>
+<span class="cstat-no" title="statement not covered" >            code = 'this is Python';</span>
+<span class="cstat-no" title="statement not covered" >            pyPastedCode = 'this is a challenged programming langage !';</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (code = cssPastedcode) {</span>
+<span class="cstat-no" title="statement not covered" >            code = 'this is Styling , CSS';</span>
+<span class="cstat-no" title="statement not covered" >            cssPastedcode = " Mastering styling give you nice design power";</span>
+&nbsp;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (code = htmlPastedCode) {</span>
+<span class="cstat-no" title="statement not covered" >            code = 'this is HTML code , the code to make website';</span>
+<span class="cstat-no" title="statement not covered" >            htmlPastedCode = 'your code looks good !';</span>
+&nbsp;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >         code = parseInt(code)</span>
+<span class="cstat-no" title="statement not covered" >         return code;</span>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+    }
+&nbsp;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jul 02 2017 11:27:29 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
