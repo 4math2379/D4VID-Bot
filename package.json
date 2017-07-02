@@ -30,6 +30,13 @@
     "chatbots",
     "Cisco Spark"
   ],
+  {
+    "config": {
+      "blanket": {
+        "pattern": "/Users/4math1/codemeeting/skills/sample_hears.js"
+      }
+    }
+}
   "author": "ben@howdy.ai",
   "license": "ISC"
 }

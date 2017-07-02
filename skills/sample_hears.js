@@ -9,7 +9,7 @@ respond immediately with a single line response.
 
 */
 
-var wordfilter = require('wordfilter');
+var wordfilter = require("wordfilter");
 
 module.exports = function(controller) {
 
@@ -17,7 +17,7 @@ module.exports = function(controller) {
     var stats = {
         triggers: 0,
         convos: 0,
-    }
+    };
 
     controller.on('heard_trigger', function() {
         stats.triggers++;
@@ -43,38 +43,6 @@ module.exports = function(controller) {
 
     });
 
-
-    //fonction for the code pasted//
-    /**
-            _     _                 _      
-          | |   | |               | |     
-  __ _  __| | __| |   ___ ___   __| | ___ 
- / _` |/ _` |/ _` |  / __/ _ \ / _` |/ _ \
-| (_| | (_| | (_| | | (_| (_) | (_| |  __/
- \__,_|\__,_|\__,_|  \___\___/ \__,_|\___|
-                                          
-     */
-    controller.hears(['^code (.*)', '^code'],'direct_message,direct_mention',function(bot, message){
-        //create convo
-            bot.createConversation(message, function(err, convo){
-                if (!err) {
-                    //setting variable and other stuff...
-                    convo.setVar('code', code(process.code()));
-
-                    convo.say('you pasted {{vars.code}}');
-                    convo.activate();
-                }
-            })
-    
-
-})
-
-
-
-
-
-
-
     controller.hears(['^say (.*)','^say'], 'direct_message,direct_mention', function(bot, message) {
         if (message.match[1]) {
 
@@ -87,6 +55,98 @@ module.exports = function(controller) {
             bot.reply(message, 'I will repeat whatever you say.')
         }
     });
+  
+  
+  //fonction for the code pasted//
+    /**
+            _     _                 _      
+          | |   | |               | |     
+  __ _  __| | __| |   ___ ___   __| | ___ 
+ / _` |/ _` |/ _` |  / __/ _ \ / _` |/ _ \
+| (_| | (_| | (_| | | (_| (_) | (_| |  __/
+ \__,_|\__,_|\__,_|  \___\___/ \__,_|\___|
+                                          
+     */
+  
+  
+  
+  
+  
+  
+    //our lib RD = reading 
+    function RDVar(coding) {
+        //programming array
+        var jsPastedCode = ['let','var','function','if','else'];
+        var pyPastedCode = ['elif', 'import', 'module','def'];
+        var cssPastedcode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];
+        var htmlPastedCode = ['<h1>','<h2>','<p>','<html>','<div>','<a>','<section>'];
+
+        if (coding = jsPastedCode) {
+            coding = "this is JavaScript";
+            jsPastedCode = "Your code looks fine";
+        }
+        if (coding = pyPastedCode) {
+            coding = 'this is Python';
+            pyPastedCode = 'this is a challenged programming langage !';
+        }
+
+        if (coding = cssPastedcode) {
+            coding = 'this is Styling , CSS';
+            cssPastedcode = " Mastering styling give you nice design power";
+
+        }
+
+        if (coding = htmlPastedCode) {
+            coding = 'this is HTML code , the code to make website';
+            htmlPastedCode = 'your code looks good !';
+
+        }
+
+         coding = parseInt("code");
+         return coding;
+  
+  
+  
+    }
+  
+   var typeOfCode = {
+        JavaScript: "Javascript",
+        Python: "Python",
+        CSS: "CSS",
+        //HTML: "HTML",
+
+       
+    }
+  
+  
+  //trouver l'erreur sur le fonction ERR
+  
+    controller.hears(['^code'],'direct_message,direct_mention',function(bot, message){
+        //create convo
+            bot.createConversation(message, function(convo){
+              
+                
+                    //setting variable and other stuff...
+                    //convo.setVar('code', RDVar(process.coding()));
+                  
+                  
+                    convo.setVar('code', RDVar(process.coding()));
+                    convo.setVar('convos', typeOfCode.convos);
+                    //convo.setVar('triggers', typeOfCode.triggers);
+                  
+
+                    convo.say('you pasted {{vars.code}}');
+                    convo.activate();
+                
+            })
+    
+
+})
+  
+  
+  
+  
+  
 
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -113,54 +173,7 @@ module.exports = function(controller) {
         uptime = parseInt(uptime) + ' ' + unit;
         return uptime;
     }
+  
 
-        //our lib RD = reading 
-    function RDVar(code) {
-        //programming array
-        var jsPastedCode = ['let','var','function','if','else'];
-        var pyPastedCode = ['elif', 'import', 'module','def'];
-        var cssPastedcode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];
-        var htmlPastedCode = ['<h1>','<h2>','<p>','<html>','<div>','<a>','<section>'];
-
-        if (code = jsPastedCode) {
-            code = "this is JavaScript";
-            jsPastedCode = "Your code looks fine";
-        }
-        if (code = pyPastedCode) {
-            code = 'this is Python';
-            pyPastedCode = 'this is a challenged programming langage !';
-        }
-
-        if (code = cssPastedcode) {
-            code = 'this is Styling , CSS';
-            cssPastedcode = " Mastering styling give you nice design power";
-
-        }
-
-        if (code = htmlPastedCode) {
-            code = 'this is HTML code , the code to make website';
-            htmlPastedCode = 'your code looks good !';
-
-        }
-
-         code = parseInt(code)
-         return code;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 
 };
