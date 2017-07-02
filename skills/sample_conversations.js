@@ -43,6 +43,32 @@ module.exports = function(controller) {
       
       
     });
+
+
+
+    var askForLangage = function(err, convo) {
+      convo.ask('What is your programming langage', function(response, convo) {
+        convo.say('Awesome.');
+        askJob(response, convo);
+        convo.next();
+      });
+    };
+    var askJob = function(response, convo) {
+      convo.ask('What is your degree at the moment ?', function(response, convo) {
+        convo.say('Ok.')
+        askAfter(response, convo);
+        convo.next();
+      });
+    };
+    var askAfter = function(response, convo) {
+      convo.ask('So what do you plan to do after your graduation ?', function(response, convo) {
+        convo.say('Ok!');
+        convo.next();
+      });
+    };
+
+    bot.startConversation(message, askForLangage);
+});
   
   
 

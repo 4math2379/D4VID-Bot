@@ -12,6 +12,33 @@ respond immediately with a single line response.
 var wordfilter = require("wordfilter");
 
 module.exports = function(controller) {
+  
+  
+   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Utility function to format uptime */
+    function formatUptime(uptime) {
+        var unit = 'second';
+        if (uptime > 60) {
+            uptime = uptime / 60;
+            unit = 'minute';
+        }
+        if (uptime > 60) {
+            uptime = uptime / 60;
+            unit = 'hour';
+        }
+        if (uptime != 1) {
+            unit = unit + 's';
+        }
+
+        uptime = parseInt(uptime) + ' ' + unit;
+        return uptime;
+    }
+  
 
     /* Collect some very simple runtime stats for use in the uptime/debug command */
     var stats = {
@@ -78,30 +105,32 @@ module.exports = function(controller) {
         //programming array
         var jsPastedCode = ['let','var','function','if','else'];
         var pyPastedCode = ['elif', 'import', 'module','def'];
-        var cssPastedcode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];
+        var cssPastedCode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];
         var htmlPastedCode = ['<h1>','<h2>','<p>','<html>','<div>','<a>','<section>'];
-
+        
+        //code pasted Array
+        var pastedCode = [jsPastedCode,pyPastedCode,cssPastedCode,htmlPastedCode];
+      
         if (coding = jsPastedCode) {
-            coding = "this is JavaScript";
-            jsPastedCode = "Your code looks fine";
+            coding = coding.jsPastedCode;
+            pastedCode = jsPastedCode;
         }
-        if (coding = pyPastedCode) {
-            coding = 'this is Python';
-            pyPastedCode = 'this is a challenged programming langage !';
+         if (coding = pyPastedCode) {
+            coding = coding.pyPastedCode;
+            pastedCode = pyPastedCode ;
         }
 
-        if (coding = cssPastedcode) {
-            coding = 'this is Styling , CSS';
-            cssPastedcode = " Mastering styling give you nice design power";
+         if  (coding = cssPastedCode) {
+            coding = coding.cssPastedCode;
+            pastedCode = cssPastedCode;
 
         }
 
         if (coding = htmlPastedCode) {
-            coding = 'this is HTML code , the code to make website';
-            htmlPastedCode = 'your code looks good !';
+            coding = coding.htmlPastedCode;
+            pastedCode = htmlPastedCode;
 
         }
-
          coding = parseInt("code");
          return coding;
   
@@ -130,12 +159,12 @@ module.exports = function(controller) {
                     //convo.setVar('code', RDVar(process.coding()));
                   
                   
-                    convo.setVar('code', RDVar(process.coding()));
+                    convo.setVar("coding", RDVar(process.coding()));
                     convo.setVar('convos', typeOfCode.convos);
                     //convo.setVar('triggers', typeOfCode.triggers);
                   
 
-                    convo.say('you pasted {{vars.code}}');
+                    convo.say('you pasted or type  {{vars.code}}');
                     convo.activate();
                 
             })
@@ -149,30 +178,7 @@ module.exports = function(controller) {
   
 
 
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    /* Utility function to format uptime */
-    function formatUptime(uptime) {
-        var unit = 'second';
-        if (uptime > 60) {
-            uptime = uptime / 60;
-            unit = 'minute';
-        }
-        if (uptime > 60) {
-            uptime = uptime / 60;
-            unit = 'hour';
-        }
-        if (uptime != 1) {
-            unit = unit + 's';
-        }
 
-        uptime = parseInt(uptime) + ' ' + unit;
-        return uptime;
-    }
   
 
 
