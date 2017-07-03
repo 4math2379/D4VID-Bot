@@ -1,205 +1,74 @@
-/*
-
-WHAT IS THIS?
-
-This module demonstrates simple uses of Botkit's conversation system.
-
-In this example, Botkit hears a keyword, then asks a question. Different paths
-through the conversation are chosen based on the user's response.
-
-*/
-
 module.exports = function(controller) {
 
-    controller.hears(['var'], 'direct_message,direct_mention', function(bot, message) {
-
-        bot.startConversation(message, function(err, convo) {
-            convo.say('Let me check your code');
-
-            convo.ask('What programming langage do you use ?', function(response, convo) {
-
-                convo.say('Cool, I like ' + response.text + ' too!');
-                convo.next();
-              //execution des analyses.
-              
-              
-              convo.createConversation(message, function(err, convo) {
-
-              
-              convo.setVar('foo','bar');
-                
-              convo.setVar('list',[{value:'option 1'},{value:'option 2'}]);
-              convo.setVar('object',{'name': 'Chester', 'type': 'imaginary'});
-
-    // now set the conversation in motion...
-    convo.activate(); 
-              });
-
-            });
-        });
-              
-          
-      
-      
-      
-    });
 
 
-//fonction for the code pasted//
-    /**
-            _     _                 _      
-          | |   | |               | |     
-  __ _  __| | __| |   ___ ___   __| | ___ 
- / _` |/ _` |/ _` |  / __/ _ \ / _` |/ _ \
-| (_| | (_| | (_| | | (_| (_) | (_| |  __/
- \__,_|\__,_|\__,_|  \___\___/ \__,_|\___|
-                                          
-     */
+controller.hears(['code'], 'direct_message,direct_mention', function(bot,message) {
   
-  
-  
-  
-  
-  
-    //our lib RD = reading 
-    function RDVar(coding) {
-        //programming array
-        var jsPastedCode = ['let','var','function','if','else'];
-        var pyPastedCode = ['elif', 'import', 'module','def'];
-        var cssPastedCode = ['text-align','border-color','webkitConvertPointFromNodeToPage','text-decoration','font-size'];
-        var htmlPastedCode = ['<h1>','<h2>','<p>','<html>','<div>','<a>','<section>'];
-        
-        //code pasted Array
-        var pastedCode = [jsPastedCode,pyPastedCode,cssPastedCode,htmlPastedCode];
-      
-        if (coding = jsPastedCode) {
-            coding = coding.jsPastedCode;
-            pastedCode = jsPastedCode;
-        }
-         if (coding = pyPastedCode) {
-            coding = coding.pyPastedCode;
-            pastedCode = pyPastedCode ;
-        }
-
-         if  (coding = cssPastedCode) {
-            coding = coding.cssPastedCode;
-            pastedCode = cssPastedCode;
-
-        }
-
-        if (coding = htmlPastedCode) {
-            coding = coding.htmlPastedCode;
-            pastedCode = htmlPastedCode;
-
-        }
-         coding = parseInt("code");
-         return coding;
-  
-  
-  
-    }
-  
-   var typeOfCode = {
-        JavaScript: "Javascript",
-        Python: "Python",
-        CSS: "CSS",
-        //HTML: "HTML",
-
-       
-    }
-
-
-
-
-
     var askForLangage = function(err, convo) {
-      convo.ask('What is your programming langage', function(response, convo) {
-        convo.say('Awesome.');
-        askJob(response, convo);
-        convo.next();
+      convo.ask('What is your favorite programming langage ?', function(response, convo) {
+        if (response.text == "python"){
+        
+        convo.say("WOW ! " + response.text  +   " is an awesome programming langage ! do you know what is a RaspBerry PI ?");
+          
+            raspInfo(response, convo);
+        
+            convo.next();
+          
+          
+          
+        
+        }
+                  
+                  
+          
+         else if (response.text == "javascript") {
+           convo.say("JavaScript is a programming language commonly used in web development... but you can programm many open source device with it , like the Arduino." )
+           bot.reply(message,{text:'Arduino UNO', files:['https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/intro_cartearduino_sml.png']});
+           askJob(response, convo);
+            convo.next();
+          } else {
+            convo.say(response.text  +   " is an awesome programming langage !")
+            bot.reply(message,{text: 'yes :)', markdown: '*yes!*'});
+            askJob(response, convo);
+            convo.next();
+
+          
+        }
+      
+          
+         
+        
       });
     };
+  
+  //raspi info
+  var raspInfo = function(response, convo){
+        convo.say("the RaspBerry Pi is a micro computer, you got everything inside to learn how to programm this device and many of its extension ! This is the official web pages : https://www.raspberrypi.org/");
+        askJob(response, convo);
+        convo.next();
+        
+      }
+  
+  
+  
     var askJob = function(response, convo) {
-      convo.ask('What is your degree at the moment ?', function(response, convo) {
+        //put the respons.text + later
+      convo.ask('What is your level with this programming langage ?', function(response, convo) {
         convo.say('Ok.')
         askAfter(response, convo);
         convo.next();
       });
     };
     var askAfter = function(response, convo) {
-      convo.ask('So what do you plan to do after your graduation ?', function(response, convo) {
-        convo.say('Ok!');
+      convo.ask('In the future what job you wan\'t to do ?', function(response, convo) {
+        convo.say('I wish you best ! :)');
         convo.next();
       });
     };
 
     bot.startConversation(message, askForLangage);
 });
-  
-  
 
 
 
-    controller.hears(['question'], 'direct_message,direct_mention', function(bot, message) {
-
-        bot.createConversation(message, function(err, convo) {
-
-            // create a path for when a user says YES
-            convo.addMessage({
-                    text: 'How wonderful.',
-            },'yes_thread');
-
-            // create a path for when a user says NO
-            // mark the conversation as unsuccessful at the end
-            convo.addMessage({
-                text: 'Cheese! It is not for everyone.',
-                action: 'stop', // this marks the converation as unsuccessful
-            },'no_thread');
-
-            // create a path where neither option was matched
-            // this message has an action field, which directs botkit to go back to the `default` thread after sending this message.
-            convo.addMessage({
-                text: 'Sorry I did not understand. Say `yes` or `no`',
-                action: 'default',
-            },'bad_response');
-
-            // Create a yes/no question in the default thread...
-            convo.ask('Do you like cheese?', [
-                {
-                    pattern:  bot.utterances.yes,
-                    callback: function(response, convo) {
-                        convo.gotoThread('yes_thread');
-                    },
-                },
-                {
-                    pattern:  bot.utterances.no,
-                    callback: function(response, convo) {
-                        convo.gotoThread('no_thread');
-                    },
-                },
-                {
-                    default: true,
-                    callback: function(response, convo) {
-                        convo.gotoThread('bad_response');
-                    },
-                }
-            ]);
-
-            convo.activate();
-
-            // capture the results of the conversation and see what happened...
-            convo.on('end', function(convo) {
-
-                if (convo.successful()) {
-                    // this still works to send individual replies...
-                    bot.reply(message, 'Let us eat some!');
-
-                    // and now deliver cheese via tcp/ip...
-                }
-
-            });
-        });
-
-    });
-
-};
+}
