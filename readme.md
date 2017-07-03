@@ -18,10 +18,12 @@ Finaly D4VID will give him resources and can send to the user some news about th
 
 #### Cisco Spark Application 
  Cisco Spark application via the [Cisco Spark developer portal](https://developer.ciscospark.com/)
- This the services D4VID will use for discussions. 
+ This is the services D4VID will use for discussions. 
 
 
-##### Glitch
+
+
+#### Glitch
 
 This is an awesome plaforme for Coding and deploying easyly our Bot
 [Glitch](https://glitch.com/about/)
