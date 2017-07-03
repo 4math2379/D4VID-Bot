@@ -1,4 +1,4 @@
-# D4VID : A bot to understand simple code
+# D4VID : A bot to understand and challenge novice programmers
 
 This repo contains a project for a the Cisco Spark Hackaton.
 
