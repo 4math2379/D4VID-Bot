@@ -1,5 +1,7 @@
 # D4VID : A bot to understand and challenge novice programmers
 
+<img src = "http://i.imgur.com/twBt8kg.png"></img>
+
 This repo contains a project for a  Cisco Spark Hackaton.
 
 The purpose is a Bot who will converse with the user ( during a Class session for example ) about programming langages.
@@ -30,7 +32,7 @@ This is an awesome plaform for Coding and deploying easyly our Bot.
 [See the documentation.](https://glitch.com/about/)
 
 
-<img src = "http://i.imgur.com/twBt8kg.png"></img>
+
 
 # About me
 
