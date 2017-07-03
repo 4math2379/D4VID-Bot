@@ -1,11 +1,11 @@
 # D4VID : A bot to understand and challenge novice programmers
 
-This repo contains a project for a the Cisco Spark Hackaton.
+This repo contains a project for a  Cisco Spark Hackaton.
 
-The purpose is a Bot who will converse with the user ( during a Class session for example) about programming langages.
+The purpose is a Bot who will converse with the user ( during a Class session for example ) about programming langages.
 Durint the chat, the user will explain her/his objectives and purposes. D4VID will guide him to the best programming langages and give the user some challenge codes.
 
-Finaly D4VID will give him resources and can send to the user some news about the langages the user will use now.
+Finaly D4VID will give him resources and can send to the user some news about the programming langage.
 
 
 # What we use for this Bot :
