@@ -1,8 +1,11 @@
 # D4VID : A bot to understand simple code
 
-This repo contains a project for the Cisco Spak Hackaton.
+This repo contains a project for a the Cisco Spark Hackaton.
 
-The purpose is a bot who can understand simple line of code for novice programmer or student.
+The purpose is a Bot who will converse with the user ( during a Class session for example) about programming langages.
+Durint the chat, the user will explain her/his objectives and purposes. D4VID will guide him to the best programming langages and give the user some challenge codes.
+
+Finaly D4VID will give him resources and can send to the user some news about the langages the user will use now.
 
 
 # What we use for this Bot :
@@ -13,8 +16,9 @@ The purpose is a bot who can understand simple line of code for novice programme
 
 
 
-#### Set up your Cisco Spark Application 
- Cisco Spark application via the [Cisco Spark developer portal](https://developer.ciscospark.com/). This is a multi-step process, but only takes a few minutes. 
+#### Cisco Spark Application 
+ Cisco Spark application via the [Cisco Spark developer portal](https://developer.ciscospark.com/)
+ This the services D4VID will use for discussions. 
 
 
 ##### Glitch
