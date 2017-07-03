@@ -25,8 +25,9 @@ Finaly D4VID will give him resources and can send to the user some news about th
 
 #### Glitch
 
-This is an awesome plaforme for Coding and deploying easyly our Bot
-[Glitch](https://glitch.com/about/)
+This is an awesome plaform for Coding and deploying easyly our Bot.
+
+[See the documentation.](https://glitch.com/about/)
 
 
 <img src = "http://i.imgur.com/twBt8kg.png"></img>
