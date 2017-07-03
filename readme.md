@@ -1,4 +1,4 @@
-# D4AVID : A bot to understand simple code
+# D4VID : A bot to understand simple code
 
 This repo contains a project for the Cisco Spak Hackaton.
 
