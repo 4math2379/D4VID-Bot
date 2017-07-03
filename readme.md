@@ -1,6 +1,6 @@
 # D4VID : A bot to understand and challenge novice programmers
 
-<img    src = "http://i.imgur.com/twBt8kg.png" style="display: block;
+<img    src = "http://i.imgur.com/twBt8kg.png", style="display: block;
     margin: 0 auto;"></img>
 
 This repo contains a project for a  Cisco Spark Hackaton.
