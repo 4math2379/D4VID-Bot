@@ -11,7 +11,9 @@ controller.hears(['code'], 'direct_message,direct_mention', function(bot,message
         convo.say("WOW ! " + response.text  +   " is an awesome programming langage ! do you know what is a RaspBerry PI ?");
           
             raspInfo(response, convo);
-        
+            //convo.next()
+          
+            //askJob(response, convo);
             convo.next();
           
           
@@ -28,7 +30,7 @@ controller.hears(['code'], 'direct_message,direct_mention', function(bot,message
             convo.next();
           } else {
             convo.say(response.text  +   " is an awesome programming langage !")
-            bot.reply(message,{text: 'yes :)', markdown: '*yes!*'});
+            bot.reply(message,{text: 'yes :)', markdown: '*Interesting langage :)*'});
             askJob(response, convo);
             convo.next();
 
@@ -50,18 +52,33 @@ controller.hears(['code'], 'direct_message,direct_mention', function(bot,message
       }
   
   
-  
+  //cusutoming the reply I 
     var askJob = function(response, convo) {
-        //put the respons.text + later
+        //put the respons.text +
       convo.ask('What is your level with this programming langage ?', function(response, convo) {
-        convo.say('Ok.')
+        
+        if (response.text == "noob") {
+          convo.say("don't say that :) trust your coding power !");
+          askAfter(response, convo);
+          convo.next;
+          
+        } else if (response.text =="pro") {
+        convo.say('Really ? We will see that');
         askAfter(response, convo);
         convo.next();
+        } else {
+          convo.say("ok");
+          askAfter(response, convo);
+          convo.next;
+        };
       });
     };
+  
+  
+  
     var askAfter = function(response, convo) {
       convo.ask('In the future what job you wan\'t to do ?', function(response, convo) {
-        convo.say('I wish you best ! :)');
+        convo.say('I wish you the best ! :)');
         convo.next();
       });
     };
