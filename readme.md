@@ -1,6 +1,6 @@
 # D4VID : A bot to understand and challenge novice programmers
 
-<img style = "float:right;"   src = "http://i.imgur.com/AEzPEAW.png"></img>
+<img src = "http://i.imgur.com/U7mdH7n.png"></img>
 
 This repo contains a project for a  Cisco Spark Hackaton.
 
@@ -20,7 +20,7 @@ Finaly D4VID will give him resources and can send to the user some news about th
 
 #### Cisco Spark Application 
  Cisco Spark application via the [Cisco Spark developer portal](https://developer.ciscospark.com/)
- This is the services D4VID will use for discussions. 
+ This is the service D4VID will use for discussions. 
 
 
 
